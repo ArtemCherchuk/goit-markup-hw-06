@@ -561,19 +561,23 @@ img {
 
 .subscribe-form {
   display: flex;
-  gap: 24px;
+  align-items: flex-end;
+}
+
+.label-subscribe {
+  margin-right: 24px;
 }
 
 .subscribe-mail {
   width: 264px;
   height: 40px;
-  padding: 8px 16px;
+  padding-left: 16px;
 
   background-color: transparent;
   color: var(--color-white);
   font-size: 12px;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   border: 1px solid #FFFFFF;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -588,8 +592,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  max-width: 165px;
+  min-width: 165px;
   height: 40px;
   padding: 8px 24px;
 
@@ -598,6 +601,10 @@ img {
   border-radius: 4px;
   box-shadow: none;
   cursor: pointer;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
 
   transition: background-color var(--transition-dur),
     box-shadow var(--transition-dur);
@@ -607,6 +614,10 @@ img {
 .subscribe-btn:focus {
   background-color: var(--link-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subscribe-icon {
+  margin-left: 16px;
 }
 
 /* footer portfolio */
