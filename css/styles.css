@@ -878,7 +878,7 @@ img {
   outline: transparent;
 
   padding-left: 38px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.2);
   border-radius: 4px;
 
   transition: border-color var(--transition-dur);
@@ -908,7 +908,7 @@ img {
   color: rgba(46, 47, 66, 0.4);
 
   background-color: transparent;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.2);
   border-radius: 4px;
   outline: transparent;
   resize: none;
@@ -937,7 +937,17 @@ img {
 
 
 .checkbox-form-appearance {
-  appearance: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .label-form-checkbox {
@@ -962,8 +972,8 @@ img {
 }
 
 .checkbox-form-appearance:checked+.label-form-checkbox>.checkbox-form-container {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--link-hover);
+  border-color: var(--link-hover);
   border: none;
   fill: var(--color-white);
 }
