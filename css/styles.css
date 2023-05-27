@@ -68,8 +68,8 @@ img {
 }
 
 /* hidden */
-.hide {
-  /* display: none; */
+.visually-hidden {
+
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -973,9 +973,9 @@ img {
 
 .checkbox-form-appearance:checked+.label-form-checkbox>.checkbox-form-container {
   background-color: var(--link-hover);
-  border-color: var(--link-hover);
   border: none;
   fill: var(--color-white);
+  border-color: var(--link-hover);
 }
 
 .link-form {
