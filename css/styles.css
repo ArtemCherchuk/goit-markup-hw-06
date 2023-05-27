@@ -11,6 +11,7 @@
   --link-hover: #404BBF;
   --transition-dur: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --color-white: #FFFFFF;
+  --color-label-text: #8e8f99;
 }
 
 body {
@@ -783,9 +784,8 @@ img {
   transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
-  padding: 24px;
-  padding-top: 72px;
-  background: #FCFCFC;
+  padding: 72px 24px 24px 24px;
+  background-color: #FCFCFC;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
@@ -830,13 +830,11 @@ img {
   width: 360px;
 }
 
-.fieldset-modal {
-  border: none;
-  margin: 0;
-  padding: 0;
+.container-modal {
+  margin-bottom: 8px;
 }
 
-.legend-modal {
+.title-modal {
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
@@ -848,8 +846,10 @@ img {
 }
 
 .label-form {
-  margin-bottom: 8px;
-  color: #434455;
+  display: block;
+
+  margin-bottom: 4px;
+  color: var(--color-label-text);
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -874,15 +874,17 @@ img {
 .input-form {
   width: 100%;
   height: 40px;
-  padding: 8px 16px 8px 38px;
+  background-color: transparent;
+  outline: transparent;
+
+  padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
 
-  transition: border var(--transition-dur);
+  transition: border-color var(--transition-dur);
 }
 
 .input-form:focus {
-  outline: transparent;
   border-color: var(--accent-color);
 }
 
@@ -891,16 +893,28 @@ img {
 }
 
 
-
+.container-texterea {
+  margin-bottom: 16px;
+}
 
 .textarea-form {
   width: 100%;
   height: 120px;
   padding: 8px 16px;
-  margin-bottom: 16px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+
+  background-color: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  outline: transparent;
   resize: none;
+
+  transition: border-color var(--transition-dur);
+
 }
 
 .textarea-form:focus {
@@ -917,58 +931,44 @@ img {
 
 /* checkbox */
 
-.cheked-form {
-  /* margin-bottom: 16px; */
-}
-
-.cheked-form .label-form {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
+.checkbox-form {
   margin-bottom: 24px;
 }
 
 
-
-.checkbox-form-item {
+.checkbox-form-appearance {
   appearance: none;
 }
 
-.checkbox-vector {
-  display: flex;
+.label-form-checkbox {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--color-label-text);
+}
+
+.checkbox-form-container {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+
   width: 16px;
   height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  fill: transparent;
+  border: 1px solid #2e2f42;
   border-radius: 2px;
-  margin-right: 8px;
+  order: 2;
 }
 
-.checkbox-vector-item {
-  opacity: 0;
-  transition: opacity var(--transition-dur);
+.checkbox-form-appearance:checked+.label-form-checkbox>.checkbox-form-container {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border: none;
+  fill: var(--color-white);
 }
 
-.checkbox-form-item:checked+.checkbox-vector {
-  background-color: var(--link-hover);
-}
-
-.checkbox-form-item:checked+.checkbox-vector>.checkbox-vector-item {
-  opacity: 1;
-}
-
-.cheked-text {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.04em;
-  color: #8E8F99;
-}
-
-.checkbox-form-item:checked+.link-form {
+.link-form {
   color: var(--accent-color);
 }
 
@@ -978,8 +978,9 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
 
   font-weight: 500;
@@ -990,10 +991,9 @@ img {
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
 
-  transition: border var(--transition-dur),
-    background-color var(--transition-dur),
-    box-shadow var(--transition-dur);
+  transition: background-color var(--transition-dur);
 }
 
 .btn-form:hover,
